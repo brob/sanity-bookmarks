@@ -1,0 +1,24 @@
+{
+  "name": "netlify-fauna-bookmarks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx netlify-lambda build lambda --config ./webpack.functions.js && npx eleventy",
+    "serve": "npx netlify-lambda build lambda --config ./webpack.functions.js && npx eleventy --serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@11ty/eleventy": "^0.9.0",
+    "@sanity/client": "^2.1.0",
+    "cheerio": "^1.0.0-rc.3",
+    "dotenv": "^8.2.0",
+    "faunadb": "^2.8.0",
+    "netlify-lambda": "^1.6.3",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
+  }
+}
