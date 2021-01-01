@@ -20,29 +20,29 @@ permalink: "/newsletters/{{ newsletter.title | slug }}/index.html"
   <row>
     <columns>
       <h1 class="text-center">{{ newsletter.title }}</h1>
-      <center>
-        <img src="https://placehold.it/500x200">
-      </center>
 
       <spacer size="16"></spacer>
       
       {{ newsletter.opening }}
 
+      {% if newsletter.bookmarks %}
       <row>
         <columns large="6">
-          <h2>More Reading:</h2>
+          <h2>A collection of links</h2>
           <ul>
             {% for item in newsletter.bookmarks %}
                 <li><h3><a href="{{ item.url }}">{{ item.pageTitle }}</a></h3>
-                    <p>{{item.description}}
+                {{item.description}}
                 </li>
             {% endfor %}
+            <li><a href="/" title="Brob's bookmarks">See full list of bookmarks</a>
           </ul>
         </columns>
         
       </row>
+      {% endif %}
 
-      <p><small>You received this email because you're signed up to get updates from us. <a href="#">Click here to unsubscribe.</a></small></p>
+
     </columns>
   </row>
 </container>
