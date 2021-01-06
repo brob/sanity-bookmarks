@@ -1,0 +1,48 @@
+---
+pagination: 
+    data: newsletters
+    size: 1
+    alias: newsletter
+permalink: "/newsletters/{{ newsletter.title | slug }}/index.html"
+---
+<style type="text/css">
+  body,
+  html, 
+  .body {
+    background: #f3f3f3 !important;
+  }
+</style>
+<!-- move the above styles into your custom stylesheet -->
+
+<container>
+
+  <spacer size="16"></spacer>
+  <row>
+    <columns>
+      <h1 class="text-center">{{ newsletter.title }}</h1>
+
+      <spacer size="16"></spacer>
+      
+      {{ newsletter.opening }}
+
+      {% if newsletter.bookmarks %}
+      <row>
+        <columns large="6">
+          <h2>A collection of links</h2>
+          <ul>
+            {% for item in newsletter.bookmarks %}
+                <li><h3><a href="{{ item.url }}">{{ item.pageTitle }}</a></h3>
+                {{item.description}}
+                </li>
+            {% endfor %}
+            <li><a href="/" title="Brob's bookmarks">See full list of bookmarks</a>
+          </ul>
+        </columns>
+        
+      </row>
+      {% endif %}
+
+
+    </columns>
+  </row>
+</container>
